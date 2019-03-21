@@ -2,7 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var join = path.join;
 
-function Plugin(options) {
+function ChromeExtensionManifest(options) {
   this.options = options || {};
   this.context = path.dirname(module.parent.filename);
   this.options.inputFile = path.isAbsolute(this.options.inputFile) ? this.options.inputFile : join(this.context, this.options.inputFile);
@@ -17,7 +17,7 @@ function Plugin(options) {
 Plugin.prototype.apply = function(compiler) {
   var self = this;
   return compiler.plugin('done', function() {
-    self.package.call(self);
+    self.createManifst.call(self);
   });
 }
 
@@ -35,4 +35,4 @@ Plugin.prototype.createManifst = function() {
   fs.writeFile(self.outputFile, newManifestContent);
 };
 
-module.exports = Plugin;
+module.exports = ChromeExtensionManifest;
