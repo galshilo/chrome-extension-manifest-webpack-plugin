@@ -13,7 +13,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../chrome-extension-manifest-webpack-plugin/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="480">
@@ -27,11 +27,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../chrome-extension-manifest-webpack-plugin/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="165">
+              <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -51,8 +51,8 @@
       <list>
         <option value="$PROJECT_DIR$/../chrome-extension-manifest-webpack-plugin/README.md" />
         <option value="$PROJECT_DIR$/../chrome-extension-manifest-webpack-plugin/src/index.js" />
-        <option value="$PROJECT_DIR$/../chrome-extension-manifest-webpack-plugin/package.json" />
         <option value="$PROJECT_DIR$/../chrome-extension-manifest-webpack-plugin/index.js" />
+        <option value="$PROJECT_DIR$/../chrome-extension-manifest-webpack-plugin/package.json" />
       </list>
     </option>
   </component>
@@ -118,12 +118,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553096008324</updated>
-      <workItem from="1553096009926" duration="5941000" />
+      <workItem from="1553096009926" duration="5978000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5941000" />
+    <option name="totallyTimeSpent" value="5978000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -141,10 +141,10 @@
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.24960506" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.24960506" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32970297" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32970297" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -182,13 +182,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../chrome-extension-manifest-webpack-plugin/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../chrome-extension-manifest-webpack-plugin/package-lock.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -196,6 +189,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../chrome-extension-manifest-webpack-plugin/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
         </state>
       </provider>
     </entry>

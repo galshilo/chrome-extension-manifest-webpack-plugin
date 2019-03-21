@@ -1,6 +1,6 @@
 {
   "name": "chrome-extension-manifest-webpack-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A webpack plugin to modify chrome extensions manifests",
   "homepage": "https://github.com/galshilo/chrome-extension-manifest-webpack-plugin",
   "main": "index.js",
