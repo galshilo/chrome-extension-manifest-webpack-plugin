@@ -16,16 +16,13 @@ ChromeExtensionManifest.prototype.apply = function(compiler) {
   return compiler.plugin('done', function() {
     self.createManifst.call(self);
   });
-}
+};
 
 // package the extension
 ChromeExtensionManifest.prototype.createManifst = function() {
   var self = this;
   var manifestContent = require(this.options.inputFile);
-  let newManifestContent = {
-    ...manifestContent,
-    ...this.props
-  };
+  var newManifestContent = Object.assign(manifestContent, this.props);
   fs.writeFileSync(self.outputFile, JSON.stringify(newManifestContent, null, 4));
 };
 
