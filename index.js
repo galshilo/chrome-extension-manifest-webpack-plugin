@@ -8,6 +8,7 @@ function ChromeExtensionManifest(options) {
   this.options.inputFile = path.isAbsolute(this.options.inputFile) ? this.options.inputFile : join(this.context, this.options.inputFile);
   this.outputFile = path.isAbsolute(this.options.outputFile) ? this.options.outputFile : join(this.context, this.options.outputFile);
   this.props = this.options.props instanceof Object ? this.options.props : {};
+  this.replace = this.options.replace || [];
 }
 
 // hook into webpack
@@ -20,10 +21,17 @@ ChromeExtensionManifest.prototype.apply = function(compiler) {
 
 // package the extension
 ChromeExtensionManifest.prototype.createManifst = function() {
-  var self = this;
   var manifestContent = require(this.options.inputFile);
   var newManifestContent = Object.assign(manifestContent, this.props);
-  fs.writeFileSync(self.outputFile, JSON.stringify(newManifestContent, null, 4));
+  var newManifestStringContent = JSON.stringify(newManifestContent, null, 4);
+  if (this.replace.length){
+    for (var i=0; i<this.replace.length; i++){
+      if (this.replace[i].pattern && this.replace[i].value) {
+        newManifestStringContent = newManifestStringContent.replace(this.replace[i].pattern, this.replace[i].value);
+      }
+    }
+  }
+  fs.writeFileSync(this.outputFile, newManifestStringContent);
 };
 
 module.exports = ChromeExtensionManifest;
