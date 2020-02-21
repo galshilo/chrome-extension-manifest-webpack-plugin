@@ -21,3 +21,17 @@ new ChromeExtensionManifest({
         }
 })
 ```
+options: 
+
+inputFile: Existing manifest file.
+
+outputFile: Newly created manifest file.
+
+replace: Array of objects with the follwing keys: 
+        pattern: pattern to search for.
+        value: value to be replaced with.
+        
+props: add new or overwrite manifest entries.
+
+
+
