@@ -14,7 +14,7 @@ function ChromeExtensionManifest(options) {
 // hook into webpack
 ChromeExtensionManifest.prototype.apply = function(compiler) {
   var self = this;
-  return compiler.plugin('done', function() {
+  compiler.hooks.done.tap("done", () => {
     self.createManifst.call(self);
   });
 };
