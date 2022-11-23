@@ -30,7 +30,7 @@ ChromeExtensionManifest.prototype.createManifst = function() {
   var newManifestStringContent = JSON.stringify(newManifestContent, null, 4);
   if (this.replace.length){
     for (var i=0; i<this.replace.length; i++){
-      var replaceOptions = this.replace[i].outputFile || defaultReplaceOptions;
+      var replaceOptions = this.replace[i].options || defaultReplaceOptions;
       if (this.replace[i].pattern && (this.replace[i].value || replaceOptions.allowEmpty)) {
         newManifestStringContent = newManifestStringContent.replace(this.replace[i].pattern, this.replace[i].value);
       }

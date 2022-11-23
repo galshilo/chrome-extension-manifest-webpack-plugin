@@ -32,7 +32,7 @@ Options:
         pattern: pattern to search for\
         value: value to be replaced with
 * options: An object containing optional flags
-  * allowEmpty: Allow defining an replacement value, default: false.
+  * allowEmpty: Allow defining an empty replacement value, default: false.
 * props: add new or overwrite manifest entries
 
 
