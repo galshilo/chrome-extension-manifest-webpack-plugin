@@ -2,6 +2,10 @@ var fs = require('fs');
 var path = require('path');
 var join = path.join;
 
+var defaultReplaceOptions = {
+  allowEmpty: false
+}
+
 function ChromeExtensionManifest(options) {
   this.options = options || {};
   this.context = path.dirname(module.parent.filename);
@@ -26,7 +30,8 @@ ChromeExtensionManifest.prototype.createManifst = function() {
   var newManifestStringContent = JSON.stringify(newManifestContent, null, 4);
   if (this.replace.length){
     for (var i=0; i<this.replace.length; i++){
-      if (this.replace[i].pattern && this.replace[i].value) {
+      var replaceOptions = this.replace[i].outputFile || defaultReplaceOptions;
+      if (this.replace[i].pattern && (this.replace[i].value || replaceOptions.allowEmpty)) {
         newManifestStringContent = newManifestStringContent.replace(this.replace[i].pattern, this.replace[i].value);
       }
     }
