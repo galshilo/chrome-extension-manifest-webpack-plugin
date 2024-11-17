@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:galshilo/chrome-extension-manifest-webpack-plugin.git"
+    "url": "git+ssh://git@github.com/galshilo/chrome-extension-manifest-webpack-plugin.git"
   },
   "bugs": {
     "url": "https://github.com/galshilo/chrome-extension-manifest-webpack-plugin/issues"
