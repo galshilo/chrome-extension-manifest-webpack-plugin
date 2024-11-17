@@ -24,7 +24,7 @@ ChromeExtensionManifest.prototype.apply = function(compiler) {
 };
 
 // package the extension
-ChromeExtensionManifest.prototype.createManifst = function() {
+ChromeExtensionManifest.prototype.createManifst = function(stats) {
   var manifestContent = require(this.options.inputFile);
   var newManifestContent = Object.assign(manifestContent, this.props);
   var newManifestStringContent = JSON.stringify(newManifestContent, null, 4);
@@ -36,6 +36,15 @@ ChromeExtensionManifest.prototype.createManifst = function() {
       }
     }
   }
+
+  var assets = stats.compilation.assets;
+  for (var assetName in assets) {
+    if (assets.hasOwnProperty(assetName)) {
+      var assetHash = assets[assetName].hash;
+      newManifestStringContent = newManifestStringContent.replace(new RegExp(assetName.replace('[hash]', '([a-f0-9]{8})')), assetName.replace('[hash]', assetHash));
+    }
+  }
+
   fs.writeFileSync(this.outputFile, newManifestStringContent);
 };
 
