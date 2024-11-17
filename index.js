@@ -13,13 +13,14 @@ function ChromeExtensionManifest(options) {
   this.outputFile = path.isAbsolute(this.options.outputFile) ? this.options.outputFile : join(this.context, this.options.outputFile);
   this.props = this.options.props instanceof Object ? this.options.props : {};
   this.replace = this.options.replace || [];
+  this.hash = this.options.hash || false;
 }
 
 // hook into webpack
 ChromeExtensionManifest.prototype.apply = function(compiler) {
   var self = this;
-  compiler.hooks.done.tap("done", () => {
-    self.createManifst.call(self);
+  compiler.hooks.done.tap("done", (stats) => {
+    self.createManifst.call(self, stats);
   });
 };
 
@@ -37,11 +38,11 @@ ChromeExtensionManifest.prototype.createManifst = function(stats) {
     }
   }
 
-  var assets = stats.compilation.assets;
-  for (var assetName in assets) {
-    if (assets.hasOwnProperty(assetName)) {
-      var assetHash = assets[assetName].hash;
-      newManifestStringContent = newManifestStringContent.replace(new RegExp(assetName.replace('[hash]', '([a-f0-9]{8})')), assetName.replace('[hash]', assetHash));
+  if (this.hash){
+    var hash = stats.compilation.hash;
+    var hashPattern = this.hash.pattern || /\[hash\]/g;
+    if (hash){
+      newManifestStringContent = newManifestStringContent.replace(hashPattern, hash);
     }
   }
 
