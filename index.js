@@ -33,7 +33,7 @@ ChromeExtensionManifest.prototype.createManifst = function(stats) {
     for (var i=0; i<this.replace.length; i++){
       var replaceOptions = this.replace[i].options || defaultReplaceOptions;
       if (this.replace[i].pattern && (this.replace[i].value || replaceOptions.allowEmpty)) {
-        newManifestStringContent = newManifestStringContent.replace(this.replace[i].pattern, this.replace[i].value);
+        newManifestStringContent = newManifestStringContent.replaceAll(this.replace[i].pattern, this.replace[i].value);
       }
     }
   }
